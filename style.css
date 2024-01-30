@@ -1,0 +1,53 @@
+:root{
+    --red-color: #f20044;
+    --background: #0b1522;
+}
+body{
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--background);
+}
+.heart {
+    height: 70px;
+    width: 70px;
+    background-color: var(--red-color);
+    position: relative;
+    transform: rotate(-45deg);
+    box-shadow: -10px 10px 90px var(--red-color);
+    animation: heart 0.6s linear infinite;
+}
+@keyframes heart {
+    0%{
+        transform: rotate(-45deg) scale(1.07);
+    }
+    80%{
+        transform: rotate(-45deg) scale(1);
+    }
+    100%{
+        transform: rotate(-45deg) scale(0.8);
+    }
+}
+.heart::before{
+    content: " ";
+    position: absolute;
+    height: 70px;
+    width: 70px;
+    background-color: var(--red-color);
+    top: -50%;
+    border-radius: 50px;
+    box-shadow: -10px -10px 90px var(--red-color);
+}
+.heart::after{
+    content: " ";
+    position: absolute;
+    height: 70px;
+    width: 70px;
+    background-color: var(--red-color);
+    right: -50%;
+    border-radius: 50px;
+    box-shadow: 10px 10px 90px var(--red-color);
+}
